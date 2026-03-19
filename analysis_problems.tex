@@ -236,7 +236,7 @@ Let $\mathbf{F} = (y, -x)$ and let $C$ be the unit circle traversed counterclock
 
 \item $f(x) = 0$ for $x\in[0,1)$ and $f(1) = 1$. Convergence is \emph{not} uniform (the limit function is not continuous).
 
-\item Pointwise limit is $f(x) = 0$ for all $x\in[0,1]$. The interchange fails: $\int_0^1 f_n(x)\,dx = \frac{1}{2}\ln(1+n^2)/n^2 \to 0$... actually $\int_0^1 \frac{nx}{1+n^2x^2}dx = \frac{\ln(1+n^2)}{2n}$, which $\to 0$. So in this case $\lim \int = \int \lim = 0$. The interchange happens to hold here (both sides equal $0$), even though the convergence is not uniform.
+\item Pointwise limit is $f(x) = 0$ for all $x\in[0,1]$. The integral is $\int_0^1 \frac{nx}{1+n^2x^2}\,dx = \frac{\ln(1+n^2)}{2n} \to 0$. So $\lim\int = \int\lim = 0$; the interchange holds here (both sides equal $0$), even though the convergence is not uniform.
 
 \item (a) and (c). \quad (a) is the Uniform Limit Theorem; (b) is false (e.g., $x^n$ on $[0,1]$); (c) is the Weierstrass $M$-test.
 
