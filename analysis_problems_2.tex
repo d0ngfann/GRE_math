@@ -1,0 +1,260 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, enumitem}
+
+\title{\textbf{GRE Mathematics Subject Test}\\[4pt] Analysis Practice Problems --- Set 2}
+\author{}
+\date{}
+
+\newcounter{prob}
+\newcommand{\problem}{\stepcounter{prob}\medskip\noindent\textbf{Problem \theprob.}\ }
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%======================================================================
+\section*{A. Sequences and Series}
+%======================================================================
+
+\problem
+Determine whether the series
+\[
+\sum_{n=1}^{\infty} \frac{n^n}{3^n \cdot n!}
+\]
+converges or diverges.
+
+\problem
+Find the interval of convergence (including endpoint behavior) of the power series
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n\, x^n}{n}.
+\]
+
+\problem
+Compute $\displaystyle\sum_{n=0}^{\infty} \frac{1}{n!}$.
+
+\problem
+Let $a_1 = 1$ and $a_{n+1} = \sqrt{2 + a_n}$ for $n\ge 1$. Assuming the limit exists, find $\displaystyle\lim_{n\to\infty} a_n$.
+
+\problem
+Determine whether the series $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{n} - \ln\!\left(\frac{n+1}{n}\right)\right)$ converges or diverges.
+
+\problem
+Which of the following statements are true? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item If $\sum a_n$ converges, then $a_n \to 0$.
+\item If $a_n \to 0$, then $\sum a_n$ converges.
+\item If $\sum a_n$ converges absolutely, then every rearrangement of $\sum a_n$ converges to the same sum.
+\end{enumerate}
+
+%======================================================================
+\section*{B. Continuity and Differentiability}
+%======================================================================
+
+\problem
+Let $f\colon \mathbb{R}\to\mathbb{R}$ be defined by
+\[
+f(x) = \begin{cases} x\sin(1/x), & x\neq 0,\\ 0, & x=0.\end{cases}
+\]
+Is $f$ continuous at $x=0$? Is $f$ differentiable at $x=0$?
+
+\problem
+A function $f\colon \mathbb{R}\to\mathbb{R}$ is called \emph{Lipschitz} if there exists $M > 0$ such that $|f(x)-f(y)|\le M|x-y|$ for all $x,y\in\mathbb{R}$. Which of the following are Lipschitz on $\mathbb{R}$? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $f(x) = \sin x$
+\item $f(x) = x^2$
+\item $f(x) = |x|$
+\end{enumerate}
+
+\problem
+Suppose $f\colon [a,b]\to\mathbb{R}$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a) = f(b)$. By Rolle's Theorem, there exists $c\in(a,b)$ such that $f'(c) = $ \underline{\hspace{1cm}}.
+
+\problem
+Evaluate $\displaystyle\lim_{x\to 0} \frac{e^x - 1 - x}{x^2}$.
+
+\problem
+Let $f\colon \mathbb{R}\to\mathbb{R}$ be differentiable everywhere with $|f'(x)|\le \tfrac{1}{2}$ for all $x$. Which of the following are true? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $f$ is uniformly continuous on $\mathbb{R}$.
+\item $f$ is Lipschitz on $\mathbb{R}$.
+\item $f$ has exactly one fixed point.
+\end{enumerate}
+
+%======================================================================
+\section*{C. Integration}
+%======================================================================
+
+\problem
+Let $f\colon [0,1]\to\mathbb{R}$ be bounded and continuous except at finitely many points. Is $f$ Riemann integrable on $[0,1]$?
+
+\problem
+Determine whether the improper integral
+\[
+\int_0^{\infty} \frac{1}{1+x^2}\,dx
+\]
+converges. If so, find its value.
+
+\problem
+Evaluate
+\[
+\lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{n}\cdot\frac{k}{n} \,.
+\]
+\textit{Hint:} Interpret as a Riemann sum.
+
+\problem
+Find $F'(x)$ where
+\[
+F(x) = \int_x^{x^3} \sin(t^2)\,dt.
+\]
+
+\problem
+Determine whether the integral $\displaystyle\int_1^{\infty} \frac{1}{x}\,dx$ converges or diverges. Compare with $\displaystyle\int_1^{\infty}\frac{1}{x^{1.01}}\,dx$.
+
+%======================================================================
+\section*{D. Topology of $\mathbb{R}$ and $\mathbb{R}^n$}
+%======================================================================
+
+\problem
+Let $A = (0,1)\cup(1,2)\subset\mathbb{R}$. Find $\operatorname{int}(A)$, $\overline{A}$, and $\partial A$.
+
+\problem
+True or False: The continuous image of a compact set is compact.
+
+\problem
+Which of the following subsets of $\mathbb{R}$ are connected? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $[0,1]\cup(1,2]$
+\item $\mathbb{Q}$ (the rationals)
+\item $\mathbb{R}\setminus\{0\}$
+\end{enumerate}
+
+\problem
+Let $(X,d)$ be a metric space. A set $A\subset X$ is \emph{dense} in $X$ if $\overline{A}=X$. Which of the following are dense in $\mathbb{R}$ (with the standard metric)? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $\mathbb{Q}$
+\item $\mathbb{R}\setminus\mathbb{Q}$ (the irrationals)
+\item $\mathbb{Z}$
+\end{enumerate}
+
+\problem
+True or False: A closed subset of a compact set (in a metric space) is compact.
+
+%======================================================================
+\section*{E. Sequences and Series of Functions}
+%======================================================================
+
+\problem
+Let $f_n(x) = \dfrac{x}{n}$ for $x\in[0,1]$. Does $f_n\to 0$ uniformly on $[0,1]$? Is $\displaystyle\lim_{n\to\infty}\int_0^1 f_n(x)\,dx = 0$?
+
+\problem
+Let $f_n(x) = n\,x\,(1-x)^n$ for $x\in[0,1]$. Find $\displaystyle\lim_{n\to\infty} f_n(x)$ for each $x\in[0,1]$. Does $\displaystyle\lim_{n\to\infty}\int_0^1 f_n(x)\,dx = \int_0^1 \lim_{n\to\infty} f_n(x)\,dx$?
+
+\problem
+The power series $\displaystyle\sum_{n=0}^{\infty} x^n$ converges on $(-1,1)$ to $\frac{1}{1-x}$. By differentiating term by term, find a closed-form expression for $\displaystyle\sum_{n=1}^{\infty} n\,x^{n-1}$ on $(-1,1)$.
+
+\problem
+Which of the following are true about the function $f(x) = \displaystyle\sum_{n=1}^{\infty}\frac{\sin(nx)}{n^3}$? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item The series converges uniformly on $\mathbb{R}$.
+\item $f$ is continuous on $\mathbb{R}$.
+\item $f$ is differentiable on $\mathbb{R}$ and $f'(x) = \displaystyle\sum_{n=1}^{\infty}\frac{\cos(nx)}{n^2}$.
+\end{enumerate}
+
+\problem
+True or False: If $\{f_n\}$ converges uniformly to $f$ on $[a,b]$ and each $f_n$ is Riemann integrable, then
+$\displaystyle\lim_{n\to\infty}\int_a^b f_n(x)\,dx = \int_a^b f(x)\,dx$.
+
+%======================================================================
+\section*{F. Multivariable Calculus and Miscellaneous}
+%======================================================================
+
+\problem
+Find all critical points of $f(x,y) = x^3 - 3xy + y^3$ and classify each as a local max, local min, or saddle point.
+
+\problem
+Use the Jacobian to compute the area element when changing from Cartesian to polar coordinates. That is, show $dA = r\,dr\,d\theta$.
+
+\problem
+Let $u(x,y) = e^x\cos y$. Verify that $u$ is harmonic (i.e., $\nabla^2 u = 0$) and find a harmonic conjugate $v(x,y)$ with $v(0,0) = 0$.
+
+\problem
+Use the Divergence Theorem (in $\mathbb{R}^2$, i.e., Green's Theorem in flux form) to compute
+\[
+\oint_C (x\,dy - y\,dx),
+\]
+where $C$ is the circle $x^2+y^2=4$, traversed counterclockwise.
+
+\problem
+Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 1$ using Lagrange multipliers.
+
+
+%======================================================================
+\newpage
+\section*{Answer Key}
+%======================================================================
+
+\begin{enumerate}
+\item Converges. By the Ratio Test: $a_{n+1}/a_n = \frac{1}{3}\!\left(\frac{n+1}{n}\right)^{\!n} \to e/3 \approx 0.906 < 1$.
+
+\item Interval of convergence: $(-1, 1]$. At $x=1$: $\sum (-1)^n/n$ converges (alternating series). At $x=-1$: $\sum -1/n$ diverges.
+
+\item $e$.
+
+\item $L = 2$. (Solve $L = \sqrt{2+L}$, so $L^2 = 2+L$, giving $L=2$ since $L>0$.)
+
+\item Converges. The partial sums are $\sum_{n=1}^{N}\left(\frac{1}{n}-\ln\frac{n+1}{n}\right) = H_N - \ln(N+1)$, which converges to the Euler--Mascheroni constant $\gamma\approx 0.5772$.
+
+\item (a) and (c). \quad (b) is false: $\sum 1/n$ diverges even though $1/n\to 0$.
+
+\item Continuous at $0$: yes (squeeze theorem, $|x\sin(1/x)|\le|x|\to 0$). Differentiable at $0$: no. The difference quotient $\frac{f(h)-f(0)}{h}=\sin(1/h)$ does not have a limit as $h\to 0$.
+
+\item (a) and (c). \quad (a) $|\sin x - \sin y|\le|x-y|$ with $M=1$; (b) $x^2$ is not Lipschitz on all of $\mathbb{R}$ (no uniform bound on derivative); (c) $||x|-|y||\le|x-y|$ with $M=1$.
+
+\item $f'(c) = 0$.
+
+\item $\dfrac{1}{2}$. (L'H\^opital or Taylor: $e^x = 1+x+x^2/2+\cdots$, so $(e^x-1-x)/x^2 \to 1/2$.)
+
+\item (a), (b), and (c). \quad $|f'|\le 1/2$ implies Lipschitz with $M=1/2$ (by MVT), which implies uniformly continuous. Since $M<1$, $f$ is a contraction, so by the Banach Fixed-Point Theorem it has a unique fixed point.
+
+\item Yes. A bounded function with finitely many discontinuities is Riemann integrable (the set of discontinuities has measure zero).
+
+\item Converges. $\displaystyle\int_0^{\infty}\frac{1}{1+x^2}\,dx = \lim_{b\to\infty}\arctan b = \frac{\pi}{2}$.
+
+\item $\displaystyle\frac{1}{2}$. The sum is a Riemann sum for $\displaystyle\int_0^1 x\,dx = \frac{1}{2}$.
+
+\item $F'(x) = 3x^2\sin(x^6) - \sin(x^2)$. (By Leibniz rule / FTC with variable limits.)
+
+\item $\displaystyle\int_1^{\infty}\frac{1}{x}\,dx$ diverges (harmonic). $\displaystyle\int_1^{\infty}\frac{1}{x^{1.01}}\,dx$ converges ($p=1.01>1$, value $= 100$).
+
+\item $\operatorname{int}(A)=(0,1)\cup(1,2)=A$; $\;\overline{A}=[0,2]$; $\;\partial A = \{0,1,2\}$.
+
+\item True. (A fundamental theorem: continuous images of compact sets are compact.)
+
+\item (a) only. \quad (a) $[0,1]\cup(1,2] = [0,2]$, an interval, hence connected. (b) $\mathbb{Q}$ is not connected (e.g., split at $\sqrt{2}$). (c) $\mathbb{R}\setminus\{0\}=(-\infty,0)\cup(0,\infty)$, not connected.
+
+\item (a) and (b). \quad Both $\mathbb{Q}$ and $\mathbb{R}\setminus\mathbb{Q}$ are dense in $\mathbb{R}$. $\mathbb{Z}$ is not dense (e.g., no integer in $(0,1)$).
+
+\item True. (A closed subset of a compact metric space is compact.)
+
+\item Yes, $f_n\to 0$ uniformly: $\|f_n\|_\infty = 1/n\to 0$. And $\int_0^1 f_n = 1/(2n)\to 0$. Both statements hold.
+
+\item Pointwise limit: $f(x)=0$ for all $x\in[0,1]$. But $\int_0^1 f_n(x)\,dx = \frac{n}{(n+1)(n+2)} \to 1$, while $\int_0^1 0\,dx = 0$. So the interchange \textbf{fails}: $\lim\int \neq \int\lim$.
+
+\item $\displaystyle\sum_{n=1}^{\infty}n\,x^{n-1} = \frac{1}{(1-x)^2}$ for $|x|<1$.
+
+\item (a), (b), and (c). \quad (a) By Weierstrass $M$-test: $|\sin(nx)/n^3|\le 1/n^3$ and $\sum 1/n^3<\infty$. (b) Uniform limit of continuous functions is continuous. (c) $\sum\cos(nx)/n^2$ also converges uniformly by $M$-test ($M_n=1/n^2$), so term-by-term differentiation is valid.
+
+\item True. (Uniform convergence allows interchange of limit and integral for Riemann integrable functions.)
+
+\item $\nabla f = (3x^2-3y,\;-3x+3y^2)$. Setting equal to zero: $x^2=y$ and $y^2=x$, giving $(0,0)$ and $(1,1)$. Hessian: $H=\begin{pmatrix}6x&-3\\-3&6y\end{pmatrix}$. At $(0,0)$: $\det H = -9<0$, saddle. At $(1,1)$: $\det H = 36-9=27>0$ and $H_{11}=6>0$, local min.
+
+\item $x=r\cos\theta$, $y=r\sin\theta$. Jacobian: $\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta & -r\sin\theta\\ \sin\theta & r\cos\theta\end{vmatrix}=r$. So $dA=|r|\,dr\,d\theta = r\,dr\,d\theta$.
+
+\item $u_{xx}=e^x\cos y$, $u_{yy}=-e^x\cos y$, so $\nabla^2 u=0$. Harmonic conjugate: by C-R, $v_x=-u_y=e^x\sin y$ and $v_y=u_x=e^x\cos y$. Integrating: $v(x,y)=e^x\sin y$.
+
+\item By Green's Theorem: $\oint_C x\,dy-y\,dx = \iint_D\left(\frac{\partial x}{\partial x}+\frac{\partial y}{\partial y}\right)dA = \iint_D 2\,dA = 2\cdot\pi(2)^2=8\pi$.
+
+\item $\nabla f = \lambda\nabla g$ gives $y=2\lambda x$ and $x=2\lambda y$. From these, $xy = 2\lambda x^2$ and $xy=2\lambda y^2$, so $x^2=y^2$. With $x^2+y^2=1$: $x=y=\pm 1/\sqrt{2}$. Maximum of $f=xy$ is $\boxed{1/2}$.
+\end{enumerate}
+
+\end{document}
