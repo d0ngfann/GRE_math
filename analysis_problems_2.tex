@@ -31,13 +31,18 @@ Find the interval of convergence (including endpoint behavior) of the power seri
 \]
 
 \problem
-Compute $\displaystyle\sum_{n=0}^{\infty} \frac{1}{n!}$.
+Compute $\displaystyle\sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}$.
 
 \problem
 Let $a_1 = 1$ and $a_{n+1} = \sqrt{2 + a_n}$ for $n\ge 1$. Assuming the limit exists, find $\displaystyle\lim_{n\to\infty} a_n$.
 
 \problem
-Determine whether the series $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{n} - \ln\!\left(\frac{n+1}{n}\right)\right)$ converges or diverges.
+Which of the following series converge? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{n} - \ln\!\left(\frac{n+1}{n}\right)\right)$
+\item $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+n}$
+\item $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{\sqrt{n}} - \frac{1}{\sqrt{n+1}}\right)$
+\end{enumerate}
 
 \problem
 Which of the following statements are true? Select \textbf{all} that apply.
@@ -77,7 +82,7 @@ Let $f\colon \mathbb{R}\to\mathbb{R}$ be differentiable everywhere with $|f'(x)|
 \begin{enumerate}[label=(\alph*)]
 \item $f$ is uniformly continuous on $\mathbb{R}$.
 \item $f$ is Lipschitz on $\mathbb{R}$.
-\item $f$ has exactly one fixed point.
+\item $f$ is bounded on $\mathbb{R}$.
 \end{enumerate}
 
 %======================================================================
@@ -108,7 +113,11 @@ F(x) = \int_x^{x^3} \sin(t^2)\,dt.
 \]
 
 \problem
-Determine whether the integral $\displaystyle\int_1^{\infty} \frac{1}{x}\,dx$ converges or diverges. Compare with $\displaystyle\int_1^{\infty}\frac{1}{x^{1.01}}\,dx$.
+For which values of $p>0$ does the improper integral
+\[
+\int_0^{\infty} \frac{x^{p-1}}{1+x}\,dx
+\]
+converge? \textit{Hint:} Split at $x=1$ and analyze each piece separately.
 
 %======================================================================
 \section*{D. Topology of $\mathbb{R}$ and $\mathbb{R}^n$}
@@ -144,7 +153,7 @@ True or False: A closed subset of a compact set (in a metric space) is compact.
 %======================================================================
 
 \problem
-Let $f_n(x) = \dfrac{x}{n}$ for $x\in[0,1]$. Does $f_n\to 0$ uniformly on $[0,1]$? Is $\displaystyle\lim_{n\to\infty}\int_0^1 f_n(x)\,dx = 0$?
+Let $f_n(x) = nxe^{-nx^2}$ for $x\in[0,1]$. Find the pointwise limit $f(x)=\lim_{n\to\infty}f_n(x)$ for each $x\in[0,1]$. Does $f_n\to f$ uniformly on $[0,1]$?
 
 \problem
 Let $f_n(x) = n^2\,x\,(1-x)^n$ for $x\in[0,1]$. Find $\displaystyle\lim_{n\to\infty} f_n(x)$ for each $x\in[0,1]$. Does $\displaystyle\lim_{n\to\infty}\int_0^1 f_n(x)\,dx = \int_0^1 \lim_{n\to\infty} f_n(x)\,dx$?
@@ -198,11 +207,11 @@ Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 1
 
 \item Interval of convergence: $(-1, 1]$. At $x=1$: $\sum (-1)^n/n$ converges (alternating series). At $x=-1$: $\sum 1/n$ diverges (harmonic series).
 
-\item $e$.
+\item $\cos 1$. (Recognize as the Taylor series for $\cos x$ evaluated at $x=1$.)
 
 \item $L = 2$. (Solve $L = \sqrt{2+L}$, so $L^2 = 2+L$, giving $L=2$ since $L>0$.)
 
-\item Converges. The partial sums are $\sum_{n=1}^{N}\left(\frac{1}{n}-\ln\frac{n+1}{n}\right) = H_N - \ln(N+1)$, which converges to the Euler--Mascheroni constant $\gamma\approx 0.5772$.
+\item All three converge. \quad (a) Note $\frac{1}{n}-\ln\frac{n+1}{n} \approx \frac{1}{2n^2}$ for large $n$ (Taylor expand $\ln(1+1/n)$), so converges by comparison with $\sum 1/n^2$. (b) Telescoping: $\frac{1}{n^2+n}=\frac{1}{n}-\frac{1}{n+1}$, partial sums $\to 1$. (c) Telescoping: partial sums $= 1-\frac{1}{\sqrt{N+1}}\to 1$.
 
 \item (a) and (c). \quad (b) is false: $\sum 1/n$ diverges even though $1/n\to 0$.
 
@@ -214,7 +223,7 @@ Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 1
 
 \item $\dfrac{1}{2}$. (L'H\^opital or Taylor: $e^x = 1+x+x^2/2+\cdots$, so $(e^x-1-x)/x^2 \to 1/2$.)
 
-\item (a), (b), and (c). \quad $|f'|\le 1/2$ implies Lipschitz with $M=1/2$ (by MVT), which implies uniformly continuous. Since $M<1$, $f$ is a contraction, so by the Banach Fixed-Point Theorem it has a unique fixed point.
+\item (a) and (b) only. \quad $|f'|\le 1/2$ implies Lipschitz with $M=1/2$ (by MVT), which implies uniformly continuous. (c) is false: $f(x)=x/2$ satisfies $|f'|=1/2$ but $f$ is unbounded.
 
 \item Yes. A bounded function with finitely many discontinuities is Riemann integrable (the set of discontinuities has measure zero).
 
@@ -224,7 +233,7 @@ Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 1
 
 \item $F'(x) = 3x^2\sin(x^6) - \sin(x^2)$. (By Leibniz rule / FTC with variable limits.)
 
-\item $\displaystyle\int_1^{\infty}\frac{1}{x}\,dx$ diverges (harmonic). $\displaystyle\int_1^{\infty}\frac{1}{x^{1.01}}\,dx$ converges ($p=1.01>1$, value $= 100$).
+\item $0<p<1$. Near $x=0$: $\frac{x^{p-1}}{1+x}\approx x^{p-1}$, which converges iff $p-1>-1$, i.e.\ $p>0$. Near $x=\infty$: $\frac{x^{p-1}}{1+x}\approx x^{p-2}$, and $\int_1^\infty x^{p-2}\,dx$ converges iff $p-2<-1$, i.e.\ $p<1$. Together: $0<p<1$.
 
 \item $\operatorname{int}(A)=(0,1)\cup(1,2)=A$; $\;\overline{A}=[0,2]$; $\;\partial A = \{0,1,2\}$.
 
@@ -236,7 +245,7 @@ Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 1
 
 \item True. (A closed subset of a compact metric space is compact.)
 
-\item Yes, $f_n\to 0$ uniformly: $\|f_n\|_\infty = 1/n\to 0$. And $\int_0^1 f_n = 1/(2n)\to 0$. Both statements hold.
+\item $f(x)=0$ for all $x\in[0,1]$ (for $x=0$, $f_n(0)=0$; for $x>0$, $nxe^{-nx^2}\to 0$ since the exponential dominates). Convergence is NOT uniform: $\|f_n\|_\infty = f_n(1/\sqrt{2n})=\sqrt{n/(2e)}\to\infty$, so $\sup|f_n-0|\not\to 0$.
 
 \item Pointwise limit: $f(x)=0$ for all $x\in[0,1]$ (exponential decay beats polynomial growth). But $\int_0^1 n^2 x(1-x)^n\,dx = \frac{n^2}{(n+1)(n+2)} \to 1$, while $\int_0^1 0\,dx = 0$. So the interchange \textbf{fails}: $\lim\int = 1 \neq 0 = \int\lim$.
 

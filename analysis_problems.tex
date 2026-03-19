@@ -74,7 +74,12 @@ Which of the following functions are uniformly continuous on $(0,1)$? Select \te
 Suppose $f\colon [0,2]\to\mathbb{R}$ is continuous, $f(0) = -1$, and $f(2) = 5$. What is the minimum number of solutions to $f(x) = 3$ guaranteed by the Intermediate Value Theorem?
 
 \problem
-Let $f\colon [0,1]\to\mathbb{R}$ be differentiable with $f(0)=0$ and $f(1)=1$. By the Mean Value Theorem, there exists $c\in(0,1)$ with $f'(c) = $ \underline{\hspace{1cm}}.
+Let $f\colon [0,2]\to\mathbb{R}$ be twice differentiable with $f(0)=1$, $f(1)=2$, and $f(2)=3$. Which of the following must be true?
+\begin{enumerate}[label=(\alph*)]
+\item There exists $c\in(0,2)$ with $f'(c)=1$.
+\item There exists $c\in(0,2)$ with $f''(c)=0$.
+\item $f$ is linear on $[0,2]$.
+\end{enumerate}
 
 \problem
 Define $g\colon \mathbb{R}\to\mathbb{R}$ by $g(x) = |x|^{3/2}$. Is $g$ differentiable at $x=0$? If so, find $g'(0)$.
@@ -210,7 +215,7 @@ Let $\mathbf{F} = (y, -x)$ and let $C$ be the unit circle traversed counterclock
 
 \item At least $1$.
 
-\item $f'(c) = 1$.
+\item (a) and (b). \quad By MVT on $[0,1]$: $\exists\,c_1$ with $f'(c_1)=1$. By MVT on $[1,2]$: $\exists\,c_2$ with $f'(c_2)=1$. So (a) holds. Since $f'(c_1)=f'(c_2)=1$ with $c_1<c_2$, by Rolle's theorem on $f'$, $\exists\,c$ with $f''(c)=0$, so (b) holds. (c) is false: $f$ need not be linear (e.g., $f(x)=x+\frac{1}{2\pi}\sin(2\pi x)+1$).
 
 \item Yes, $g'(0) = 0$.
 
