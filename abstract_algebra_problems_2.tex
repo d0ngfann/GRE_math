@@ -185,7 +185,7 @@ How many abelian groups of order $72 = 2^3\cdot 3^2$ are there, up to isomorphis
 
 \item There are 5 homomorphisms. A homomorphism $\phi\colon\mathbb{Z}\to\mathbb{Z}/5\mathbb{Z}$ is determined by $\phi(1)$, which can be any element of $\mathbb{Z}/5\mathbb{Z}$ (there are no constraints since $\mathbb{Z}$ is free). So there are 5 homomorphisms.
 
-\item $N=\{(0,0),(2,0)\}$, so $|N|=2$ and $|G/N|=8/2=4$. $G/N$ is abelian of order 4. The coset of $(1,0)$ has order $4/\gcd(1, \text{relevant})$... Let us check: $(1,0)+N$ has order: we need the smallest $k$ with $k(1,0)\in N$. $k(1,0)=(k\bmod 4,0)$; this is in $N=\{(0,0),(2,0)\}$ when $k\equiv 0$ or $2\pmod{4}$, so the smallest positive $k$ is 2. Thus $(1,0)+N$ has order 2. Similarly $(0,1)+N$ has order 2. Since $G/N$ has order 4 and every non-identity element has order 2, $G/N\cong V_4\cong\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$.
+\item $N=\{(0,0),(2,0)\}$, so $|N|=2$ and $|G/N|=8/2=4$. $G/N$ is abelian of order 4. The coset $(1,0)+N$ has order 2, since $2(1,0)=(2,0)\in N$. Similarly $(0,1)+N$ has order 2, since $2(0,1)=(0,0)\in N$. And $(1,1)+N$ has order 2, since $2(1,1)=(2,0)\in N$. Every non-identity element of $G/N$ has order 2, so $G/N\cong V_4\cong\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$.
 
 \item (a). $\langle 3\rangle=\{0,3,6\}$ in $\mathbb{Z}/9\mathbb{Z}$, so $\mathbb{Z}/9\mathbb{Z}/\langle 3\rangle$ has order $9/3=3$ and is cyclic, so $\cong\mathbb{Z}/3\mathbb{Z}$. For (b): $\langle 2\rangle=\{0,2,4\}$ in $\mathbb{Z}/6\mathbb{Z}$, so $\mathbb{Z}/6\mathbb{Z}/\langle 2\rangle$ has order $6/3=2$, so $\cong\mathbb{Z}/2\mathbb{Z}$. For (c): $S_3/A_3$ has order $6/3=2$, so $\cong\mathbb{Z}/2\mathbb{Z}$. Only \textbf{(a)}.
 
