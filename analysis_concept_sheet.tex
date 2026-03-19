@@ -1,0 +1,319 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, enumitem, booktabs, array}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\pagestyle{empty}
+
+\newcommand{\sect}[1]{\medskip\noindent\textbf{\large #1}\medskip\hrule\smallskip}
+\newcommand{\subsect}[1]{\smallskip\noindent\textbf{#1}\par}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries GRE Math Subject Test}\\[2pt]
+{\Large Analysis Concept Sheet}
+\end{center}
+
+\vspace{-4pt}
+
+%======================================================================
+\sect{1. Sequences}
+%======================================================================
+
+\subsect{Convergence}
+$\{a_n\}\to L$ if: $\forall\,\varepsilon>0,\;\exists\,N$ s.t.\ $n>N \Rightarrow |a_n-L|<\varepsilon$.
+
+\subsect{Key Facts}
+\begin{itemize}[nosep,leftmargin=*]
+\item Monotone + bounded $\Rightarrow$ convergent.
+\item Bolzano--Weierstrass: Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
+\item If $\{a_n\}\to L$ and $\{a_n\}\to M$, then $L=M$ (limits are unique).
+\end{itemize}
+
+\subsect{Common Limits}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\left(1+\frac{1}{n}\right)^n \to e$
+\item $n^{1/n}\to 1$
+\item $\frac{n^k}{c^n}\to 0$ for any $k$ and $c>1$
+\item $\frac{c^n}{n!}\to 0$ for any fixed $c$
+\end{itemize}
+
+%======================================================================
+\sect{2. Series}
+%======================================================================
+
+\subsect{Convergence Tests}
+
+\begin{tabular}{@{}lp{4.8cm}@{}}
+\toprule
+\textbf{Test} & \textbf{Rule} \\
+\midrule
+Divergence & $a_n\not\to 0 \Rightarrow \sum a_n$ diverges \\[3pt]
+Geometric & $\sum ar^n$: converges iff $|r|<1$; sum $=\frac{a}{1-r}$ \\[3pt]
+$p$-series & $\sum\frac{1}{n^p}$: converges iff $p>1$ \\[3pt]
+Comparison & $0\le a_n\le b_n$: if $\sum b_n$ conv.\ $\Rightarrow\sum a_n$ conv. \\[3pt]
+Limit Comp. & $\lim\frac{a_n}{b_n}=L\in(0,\infty)\Rightarrow$ both converge or both diverge \\[3pt]
+Ratio & $L=\lim\left|\frac{a_{n+1}}{a_n}\right|$: $L<1$ conv., $L>1$ div. \\[3pt]
+Root & $L=\limsup|a_n|^{1/n}$: $L<1$ conv., $L>1$ div. \\[3pt]
+Integral & $\sum f(n)$ and $\int_1^\infty f(x)\,dx$ converge/diverge together ($f\downarrow\ge 0$) \\[3pt]
+Alternating & $a_n\downarrow 0 \Rightarrow \sum(-1)^n a_n$ converges \\
+\bottomrule
+\end{tabular}
+
+\subsect{Absolute vs.\ Conditional}
+\begin{itemize}[nosep,leftmargin=*]
+\item Absolute convergence $\Rightarrow$ convergence (not converse).
+\item Absolutely convergent $\Rightarrow$ every rearrangement has same sum.
+\item Conditionally convergent $\Rightarrow$ can rearrange to any value (Riemann rearrangement theorem).
+\end{itemize}
+
+%======================================================================
+\sect{3. Power Series \& Taylor Series}
+%======================================================================
+
+\subsect{Radius of Convergence}
+$R = \dfrac{1}{\limsup|c_n|^{1/n}}$, \quad or \quad $R = \lim\left|\dfrac{c_n}{c_{n+1}}\right|$ if limit exists.
+
+Converges absolutely for $|x-a|<R$, diverges for $|x-a|>R$.\\
+Check endpoints separately.
+
+\subsect{Important Taylor Series (centered at 0)}
+\begin{align*}
+e^x &= \textstyle\sum_{n=0}^{\infty}\frac{x^n}{n!} & R&=\infty \\[2pt]
+\sin x &= \textstyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!} & R&=\infty \\[2pt]
+\cos x &= \textstyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{(2n)!} & R&=\infty \\[2pt]
+\frac{1}{1-x} &= \textstyle\sum_{n=0}^{\infty} x^n & R&=1 \\[2pt]
+\ln(1+x) &= \textstyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}x^n}{n} & R&=1 \\[2pt]
+(1+x)^\alpha &= \textstyle\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n & R&=1
+\end{align*}
+
+\subsect{Operations on Power Series}
+Within the radius of convergence, you can:
+\begin{itemize}[nosep,leftmargin=*]
+\item Differentiate and integrate term by term.
+\item Add, subtract, and multiply (Cauchy product).
+\end{itemize}
+
+%======================================================================
+\sect{4. Continuity}
+%======================================================================
+
+\subsect{Definition}
+$f$ is continuous at $c$ if $\lim_{x\to c}f(x)=f(c)$.
+
+$\varepsilon$-$\delta$: $\forall\,\varepsilon>0,\;\exists\,\delta>0$ s.t.\ $|x-c|<\delta\Rightarrow|f(x)-f(c)|<\varepsilon$.
+
+\subsect{Uniform Continuity}
+$\forall\,\varepsilon>0,\;\exists\,\delta>0$ s.t.\ $|x-y|<\delta\Rightarrow|f(x)-f(y)|<\varepsilon$ for \textbf{all} $x,y$ in the domain. ($\delta$ does not depend on the point.)
+
+\begin{itemize}[nosep,leftmargin=*]
+\item Continuous on a \textbf{closed bounded} interval $\Rightarrow$ uniformly continuous.
+\item Lipschitz $\Rightarrow$ uniformly continuous $\Rightarrow$ continuous.
+\end{itemize}
+
+\subsect{Lipschitz Condition}
+$|f(x)-f(y)|\le M|x-y|$ for all $x,y$ and some constant $M$.\\
+If $f$ is differentiable and $|f'|\le M$, then $f$ is Lipschitz with constant $M$ (by MVT).
+
+\subsect{Key Theorems}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{IVT:} $f$ continuous on $[a,b]$, $f(a)<k<f(b)$ $\Rightarrow$ $\exists\,c\in(a,b)$ with $f(c)=k$.
+\item \textbf{EVT:} $f$ continuous on $[a,b]$ $\Rightarrow$ $f$ attains its max and min.
+\item Continuous image of a compact set is compact.
+\item Continuous image of a connected set is connected.
+\end{itemize}
+
+%======================================================================
+\sect{5. Differentiability}
+%======================================================================
+
+\subsect{Definition}
+$f'(a) = \displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$.
+
+Differentiable at $a$ $\Rightarrow$ continuous at $a$ (converse is FALSE: $|x|$ at $0$).
+
+\subsect{Key Theorems}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{Rolle:} $f$ cont.\ on $[a,b]$, diff.\ on $(a,b)$, $f(a)=f(b)$ $\Rightarrow$ $\exists\,c$ with $f'(c)=0$.
+\item \textbf{MVT:} Same but $f(a)\neq f(b)$ allowed $\Rightarrow$ $\exists\,c$ with $f'(c)=\frac{f(b)-f(a)}{b-a}$.
+\item \textbf{L'H\^opital:} $\frac{0}{0}$ or $\frac{\infty}{\infty}$ form: $\lim\frac{f}{g}=\lim\frac{f'}{g'}$ if the latter exists.
+\end{itemize}
+
+\subsect{Quick Differentiability Checks}
+\begin{itemize}[nosep,leftmargin=*]
+\item $x^2\sin(1/x)$ (with $f(0)=0$): differentiable at $0$, $f'(0)=0$.
+\item $x\sin(1/x)$ (with $f(0)=0$): continuous but NOT differentiable at $0$.
+\item $|x|^{3/2}$: differentiable at $0$ ($f'(0)=0$).
+\item $|x|$: continuous but NOT differentiable at $0$.
+\end{itemize}
+
+%======================================================================
+\sect{6. Riemann Integration}
+%======================================================================
+
+\subsect{Integrability}
+$f$ is Riemann integrable on $[a,b]$ if:
+\begin{itemize}[nosep,leftmargin=*]
+\item $f$ is bounded, and
+\item the set of discontinuities of $f$ has measure zero.
+\end{itemize}
+In particular: continuous $\Rightarrow$ integrable. Bounded + finitely many discontinuities $\Rightarrow$ integrable. Dirichlet function (1 on $\mathbb{Q}$, 0 on irrationals) is NOT integrable.
+
+\subsect{Fundamental Theorem of Calculus}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{FTC I:} If $F(x)=\int_a^x f(t)\,dt$ and $f$ is continuous, then $F'(x)=f(x)$.
+\item \textbf{FTC II:} $\int_a^b f(x)\,dx = F(b)-F(a)$ where $F'=f$.
+\item \textbf{Leibniz Rule:} $\frac{d}{dx}\int_{a(x)}^{b(x)} f(t)\,dt = f(b(x))\,b'(x)-f(a(x))\,a'(x)$.
+\end{itemize}
+
+\subsect{Improper Integrals}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\int_1^\infty \frac{1}{x^p}\,dx$: converges iff $p>1$.
+\item $\int_0^1 \frac{1}{x^p}\,dx$: converges iff $p<1$.
+\item Comparison: $0\le f\le g$ and $\int g$ conv.\ $\Rightarrow$ $\int f$ conv.
+\item $\int_0^\infty e^{-x}x^n\,dx = n!$ \;(Gamma function: $\Gamma(n+1)=n!$)
+\item $\int_0^\infty \frac{1}{1+x^2}\,dx = \frac{\pi}{2}$.
+\end{itemize}
+
+%======================================================================
+\sect{7. Topology of $\mathbb{R}$ and $\mathbb{R}^n$}
+%======================================================================
+
+\subsect{Open and Closed Sets}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{Open:} Every point is an interior point. (Contains a neighborhood of each of its points.)
+\item \textbf{Closed:} Contains all its limit points. Equivalently, complement is open.
+\item $\mathbb{R}$ and $\emptyset$ are both open and closed (clopen).
+\item In a connected space (like $\mathbb{R}$), the only clopen sets are $\mathbb{R}$ and $\emptyset$.
+\end{itemize}
+
+\subsect{Interior, Closure, Boundary}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\operatorname{int}(A)$: largest open set $\subseteq A$.
+\item $\overline{A}$: smallest closed set $\supseteq A$.
+\item $\partial A = \overline{A}\setminus\operatorname{int}(A)$.
+\end{itemize}
+
+\subsect{Compactness (Heine--Borel)}
+In $\mathbb{R}^n$: $K$ is compact $\iff$ $K$ is \textbf{closed and bounded}.
+
+\begin{itemize}[nosep,leftmargin=*]
+\item $[0,1]$: compact. \quad $(0,1)$: NOT compact (not closed).
+\item $\{1/n:n\in\mathbb{N}\}$: NOT compact (not closed; $0$ is a limit point not in the set).
+\item $\{1/n\}\cup\{0\}$: compact.
+\item Continuous image of compact $\Rightarrow$ compact.
+\item Closed subset of compact $\Rightarrow$ compact.
+\end{itemize}
+
+\subsect{Connectedness}
+$S\subset\mathbb{R}$ is connected $\iff$ $S$ is an interval.
+\begin{itemize}[nosep,leftmargin=*]
+\item $[0,1]\cup[2,3]$: NOT connected. \quad $[0,1]\cup(1,2]=[0,2]$: connected.
+\item $\mathbb{Q}$: NOT connected. \quad $\mathbb{R}\setminus\{0\}$: NOT connected.
+\item Continuous image of connected $\Rightarrow$ connected.
+\end{itemize}
+
+\subsect{Dense Sets}
+$A$ is dense in $X$ if $\overline{A}=X$.\\
+$\mathbb{Q}$ and $\mathbb{R}\setminus\mathbb{Q}$ are both dense in $\mathbb{R}$. $\;\mathbb{Z}$ is NOT dense.
+
+\subsect{Limit Points}
+$p$ is a limit point of $A$ if every neighborhood of $p$ contains a point of $A$ different from $p$.\\
+Example: Limit points of $\{1/n\}$ $=\{0\}$.
+
+%======================================================================
+\sect{8. Sequences \& Series of Functions}
+%======================================================================
+
+\subsect{Pointwise vs.\ Uniform Convergence}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{Pointwise:} $f_n(x)\to f(x)$ for each fixed $x$.
+\item \textbf{Uniform:} $\|f_n-f\|_\infty = \sup_x|f_n(x)-f(x)|\to 0$.
+\item Uniform $\Rightarrow$ pointwise (converse is FALSE).
+\end{itemize}
+
+\subsect{Weierstrass $M$-test}
+If $|f_n(x)|\le M_n$ for all $x$ and $\sum M_n<\infty$, then $\sum f_n$ converges \textbf{uniformly} and absolutely.
+
+\subsect{What Uniform Convergence Preserves}
+\begin{itemize}[nosep,leftmargin=*]
+\item $f_n$ continuous + uniform conv.\ $\Rightarrow$ $f$ continuous. (Uniform Limit Theorem)
+\item $f_n$ integrable + uniform conv.\ $\Rightarrow$ $\lim\int f_n = \int f$.
+\item Pointwise convergence does NOT preserve continuity or $\lim\int=\int\lim$.
+\end{itemize}
+
+\subsect{Key Counterexamples}
+\begin{itemize}[nosep,leftmargin=*]
+\item $f_n(x)=x^n$ on $[0,1]$: pointwise limit is discontinuous $\Rightarrow$ not uniform.
+\item $f_n(x)=n^2 x(1-x)^n$ on $[0,1]$: $f_n\to 0$ pointwise, but $\int f_n\to 1\neq 0=\int 0$.
+\end{itemize}
+
+%======================================================================
+\sect{9. Multivariable Calculus}
+%======================================================================
+
+\subsect{Partial Derivatives \& Gradient}
+$\nabla f = \left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right)$.
+
+\textbf{Clairaut's Theorem:} If $f_{xy}$ and $f_{yx}$ are continuous, then $f_{xy}=f_{yx}$.
+
+\subsect{Directional Derivative}
+$D_{\hat{v}}f = \nabla f\cdot\hat{v}$, \quad where $\hat{v}$ is a \textbf{unit} vector.
+
+Max rate of increase is $\|\nabla f\|$ in direction $\nabla f$.
+
+\subsect{Critical Points (2D)}
+Solve $\nabla f = \mathbf{0}$. Classify with the Hessian:
+$D = f_{xx}f_{yy}-f_{xy}^2$.
+\begin{itemize}[nosep,leftmargin=*]
+\item $D>0,\; f_{xx}>0$: local min.
+\item $D>0,\; f_{xx}<0$: local max.
+\item $D<0$: saddle point.
+\end{itemize}
+
+\subsect{Change of Variables}
+$dA = |J|\,du\,dv$ where $J = \det\frac{\partial(x,y)}{\partial(u,v)}$.\\
+Polar: $x=r\cos\theta,\; y=r\sin\theta,\; dA=r\,dr\,d\theta$.
+
+\subsect{Green's Theorem}
+\[
+\oint_C P\,dx+Q\,dy = \iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA.
+\]
+Flux form: $\oint_C P\,dy-Q\,dx = \iint_D (P_x+Q_y)\,dA$.
+
+Area via Green's: $\text{Area}=\frac{1}{2}\oint_C x\,dy-y\,dx$.
+
+\subsect{Lagrange Multipliers}
+Optimize $f$ subject to $g=c$: solve $\nabla f=\lambda\nabla g$ and $g=c$.
+
+%======================================================================
+\sect{10. Complex Analysis Basics}
+%======================================================================
+
+\subsect{Cauchy--Riemann Equations}
+$f(z)=u+iv$ is analytic $\iff$
+\[
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}, \qquad \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.
+\]
+
+\subsect{Harmonic Functions}
+$u$ is harmonic if $\nabla^2 u = u_{xx}+u_{yy}=0$.\\
+If $f=u+iv$ is analytic, both $u$ and $v$ are harmonic.\\
+Given $u$, find $v$ (harmonic conjugate) via C-R equations.
+
+\subsect{Common Pairs}
+\begin{itemize}[nosep,leftmargin=*]
+\item $u=x^2-y^2 \;\Rightarrow\; v=2xy$ \quad ($f(z)=z^2$)
+\item $u=e^x\cos y \;\Rightarrow\; v=e^x\sin y$ \quad ($f(z)=e^z$)
+\end{itemize}
+
+\bigskip
+\hrule
+\smallskip
+\begin{center}
+\textit{Hierarchy:}\; $C^1$ (continuously differentiable) $\subset$ Lipschitz $\subset$ uniformly continuous $\subset$ continuous.
+\end{center}
+
+\end{document}
