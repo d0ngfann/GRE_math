@@ -1,0 +1,258 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, enumitem}
+
+\title{\textbf{GRE Mathematics Subject Test}\\[4pt] Analysis Practice Problems}
+\author{}
+\date{}
+
+\newcounter{prob}
+\newcommand{\problem}{\stepcounter{prob}\medskip\noindent\textbf{Problem \theprob.}\ }
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%======================================================================
+\section*{A. Sequences and Series}
+%======================================================================
+
+\problem
+Determine whether the series
+\[
+\sum_{n=1}^{\infty} \frac{n!}{n^n}
+\]
+converges or diverges. If it converges, state which test you would use.
+
+\problem
+Find the radius of convergence of the power series
+\[
+\sum_{n=0}^{\infty} \frac{(2n)!}{(n!)^2}\, x^n.
+\]
+
+\problem
+Compute $\displaystyle \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!}$.
+
+\problem
+Let $a_n = \dfrac{3^n + 5^n}{4^n + 5^n}$ for $n \ge 1$. Find $\displaystyle\lim_{n\to\infty} a_n$.
+
+\problem
+Determine all values of $p > 0$ for which the series
+\[
+\sum_{n=2}^{\infty} \frac{1}{n\,(\ln n)^p}
+\]
+converges.
+
+\problem
+Which of the following series converge? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$
+\item $\displaystyle\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}\,$ converges absolutely
+\item $\displaystyle\sum_{n=1}^{\infty} \frac{\cos(n\pi)}{n}$
+\end{enumerate}
+
+%======================================================================
+\section*{B. Continuity and Differentiability}
+%======================================================================
+
+\problem
+Let $f\colon \mathbb{R}\to\mathbb{R}$ be defined by
+\[
+f(x) = \begin{cases} x^2 \sin(1/x), & x \neq 0,\\ 0, & x = 0.\end{cases}
+\]
+Is $f$ differentiable at $x = 0$? If so, find $f'(0)$.
+
+\problem
+Which of the following functions are uniformly continuous on $(0,1)$? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $f(x) = x^2$
+\item $f(x) = \sin(1/x)$
+\item $f(x) = \sqrt{x}$
+\end{enumerate}
+
+\problem
+Suppose $f\colon [0,2]\to\mathbb{R}$ is continuous, $f(0) = -1$, and $f(2) = 5$. What is the minimum number of solutions to $f(x) = 3$ guaranteed by the Intermediate Value Theorem?
+
+\problem
+Let $f\colon [0,1]\to\mathbb{R}$ be differentiable with $f(0)=0$ and $f(1)=1$. By the Mean Value Theorem, there exists $c\in(0,1)$ with $f'(c) = $ \underline{\hspace{1cm}}.
+
+\problem
+Define $g\colon \mathbb{R}\to\mathbb{R}$ by $g(x) = |x|^{3/2}$. Is $g$ differentiable at $x=0$? If so, find $g'(0)$.
+
+%======================================================================
+\section*{C. Integration}
+%======================================================================
+
+\problem
+Let $f\colon [0,1]\to\mathbb{R}$ be the function
+\[
+f(x) = \begin{cases} 1, & x \in \mathbb{Q}\cap[0,1],\\ 0, & x \notin \mathbb{Q}.\end{cases}
+\]
+Is $f$ Riemann integrable on $[0,1]$? Explain briefly.
+
+\problem
+Determine whether the improper integral
+\[
+\int_1^{\infty} \frac{\sin x}{x^2}\,dx
+\]
+converges absolutely, converges conditionally, or diverges.
+
+\problem
+Evaluate
+\[
+\frac{d}{dx}\int_0^{x^2} e^{-t^2}\,dt.
+\]
+
+\problem
+For which values of $p > 0$ does the improper integral
+\[
+\int_0^1 \frac{1}{x^p}\,dx
+\]
+converge?
+
+\problem
+Evaluate $\displaystyle\int_0^{\infty} x\, e^{-x}\,dx$.
+
+%======================================================================
+\section*{D. Topology of $\mathbb{R}$ and $\mathbb{R}^n$}
+%======================================================================
+
+\problem
+Which of the following subsets of $\mathbb{R}$ are compact? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $[0,1]$
+\item $(0,1)$
+\item $\{1/n : n\in\mathbb{N}\} \cup \{0\}$
+\end{enumerate}
+
+\problem
+Let $A = \{1/n : n \in \mathbb{N}\} \subset \mathbb{R}$. Find the set of limit points of $A$.
+
+\problem
+Which of the following subsets of $\mathbb{R}$ are both open and closed (clopen)? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item $\mathbb{R}$
+\item $\emptyset$
+\item $[0,1]$
+\end{enumerate}
+
+\problem
+True or False: Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
+
+\problem
+Let $S = [0,1]\cup[2,3] \subset \mathbb{R}$. Is $S$ connected? Is $S$ compact?
+
+%======================================================================
+\section*{E. Sequences and Series of Functions}
+%======================================================================
+
+\problem
+Let $f_n(x) = x^n$ on $[0,1]$. Find the pointwise limit function $f(x) = \lim_{n\to\infty} f_n(x)$. Does $f_n \to f$ uniformly on $[0,1]$?
+
+\problem
+Let $f_n(x) = \dfrac{nx}{1+n^2 x^2}$ for $x\in[0,1]$. Find $\displaystyle\lim_{n\to\infty} f_n(x)$ for each $x\in[0,1]$. Does $\displaystyle\lim_{n\to\infty}\int_0^1 f_n(x)\,dx = \int_0^1 \lim_{n\to\infty} f_n(x)\,dx$?
+
+\problem
+Which of the following statements are true? Select \textbf{all} that apply.
+\begin{enumerate}[label=(\alph*)]
+\item If $f_n \to f$ uniformly and each $f_n$ is continuous, then $f$ is continuous.
+\item If $f_n \to f$ pointwise and each $f_n$ is continuous, then $f$ is continuous.
+\item If $\sum_{n=1}^{\infty} \|f_n\|_\infty < \infty$, then $\sum f_n$ converges uniformly.
+\end{enumerate}
+
+\problem
+Determine whether $\displaystyle\sum_{n=1}^{\infty} \frac{x^n}{n^2}$ converges uniformly on $[-1,1]$.
+
+\problem
+Let $f_n(x) = \dfrac{\sin(nx)}{n}$ for $x\in\mathbb{R}$. Does $\{f_n\}$ converge uniformly on $\mathbb{R}$? What is the limit function?
+
+%======================================================================
+\section*{F. Multivariable Calculus and Miscellaneous}
+%======================================================================
+
+\problem
+Let $f(x,y) = x^2 y + e^{xy}$. Compute $\dfrac{\partial^2 f}{\partial x\, \partial y}$ and verify it equals $\dfrac{\partial^2 f}{\partial y\, \partial x}$.
+
+\problem
+Compute the directional derivative of $f(x,y) = x^2 + 3xy - y^2$ at the point $(1,2)$ in the direction of the vector $\mathbf{v} = (3,4)$.
+
+\problem
+Let $f(z) = u(x,y) + i\,v(x,y)$ where $z = x + iy$. If $u(x,y) = x^2 - y^2$, find $v(x,y)$ such that $f$ is analytic (satisfies the Cauchy--Riemann equations), given $v(0,0) = 0$.
+
+\problem
+Evaluate $\displaystyle\iint_D (x^2 + y^2)\,dA$, where $D$ is the disk $x^2 + y^2 \le 1$, by converting to polar coordinates.
+
+\problem
+Let $\mathbf{F} = (y, -x)$ and let $C$ be the unit circle traversed counterclockwise. Use Green's Theorem to evaluate $\displaystyle\oint_C \mathbf{F}\cdot d\mathbf{r}$.
+
+
+%======================================================================
+\newpage
+\section*{Answer Key}
+%======================================================================
+
+\begin{enumerate}
+\item Converges (by the Ratio Test; $L = 1/e < 1$).
+
+\item $R = \dfrac{1}{4}$.
+
+\item $\sin 1$.
+
+\item $1$.
+
+\item $p > 1$.
+
+\item (a) and (c). \quad (a) converges by the Alternating Series Test; (b) is false since $\sum 1/\sqrt{n}$ diverges; (c) $\cos(n\pi) = (-1)^n$, so this is the same series as (a).
+
+\item Yes, $f'(0) = 0$.
+
+\item (a) and (c). \quad (a) $x^2$ is uniformly continuous on the bounded interval $(0,1)$; (b) $\sin(1/x)$ is not uniformly continuous near $0$; (c) $\sqrt{x}$ is uniformly continuous on $(0,1)$.
+
+\item At least $1$.
+
+\item $f'(c) = 1$.
+
+\item Yes, $g'(0) = 0$.
+
+\item No, $f$ is not Riemann integrable (it is discontinuous everywhere on $[0,1]$, so the upper and lower Riemann sums do not agree).
+
+\item Converges absolutely (since $|\sin x / x^2| \le 1/x^2$ and $\int_1^\infty 1/x^2\,dx$ converges).
+
+\item $2x\, e^{-x^4}$.
+
+\item $0 < p < 1$.
+
+\item $1$.
+
+\item (a) and (c). \quad (a) $[0,1]$ is closed and bounded; (b) $(0,1)$ is not closed; (c) $\{1/n\}\cup\{0\}$ is closed and bounded.
+
+\item $\{0\}$.
+
+\item (a) and (b). \quad $\mathbb{R}$ and $\emptyset$ are the only clopen subsets of $\mathbb{R}$ (since $\mathbb{R}$ is connected).
+
+\item True (Bolzano--Weierstrass theorem).
+
+\item $S$ is not connected (it is the union of two disjoint closed intervals separated by a gap). $S$ is compact (closed and bounded).
+
+\item $f(x) = 0$ for $x\in[0,1)$ and $f(1) = 1$. Convergence is \emph{not} uniform (the limit function is not continuous).
+
+\item Pointwise limit is $f(x) = 0$ for all $x\in[0,1]$. The interchange fails: $\int_0^1 f_n(x)\,dx = \frac{1}{2}\ln(1+n^2)/n^2 \to 0$... actually $\int_0^1 \frac{nx}{1+n^2x^2}dx = \frac{\ln(1+n^2)}{2n}$, which $\to 0$. So in this case $\lim \int = \int \lim = 0$. The interchange happens to hold here (both sides equal $0$), even though the convergence is not uniform.
+
+\item (a) and (c). \quad (a) is the Uniform Limit Theorem; (b) is false (e.g., $x^n$ on $[0,1]$); (c) is the Weierstrass $M$-test.
+
+\item Yes, it converges uniformly on $[-1,1]$ (by the Weierstrass $M$-test with $M_n = 1/n^2$).
+
+\item The limit function is $f(x) = 0$ for all $x$. Yes, $\{f_n\}$ converges uniformly since $\|f_n\|_\infty = 1/n \to 0$.
+
+\item $\dfrac{\partial^2 f}{\partial x\,\partial y} = 2x + e^{xy} + xye^{xy} = \dfrac{\partial^2 f}{\partial y\,\partial x}$.
+
+\item $\nabla f(1,2) = (2x+3y,\; 3x-2y)\big|_{(1,2)} = (8, -1)$. Unit vector: $\hat{v} = (3/5, 4/5)$. Directional derivative $= 8(3/5) + (-1)(4/5) = 20/5 = 4$.
+
+\item $v(x,y) = 2xy$.
+
+\item $\displaystyle\int_0^{2\pi}\int_0^1 r^2 \cdot r\,dr\,d\theta = 2\pi\cdot\frac{1}{4} = \frac{\pi}{2}$.
+
+\item By Green's Theorem: $\displaystyle\oint_C y\,dx - x\,dy = \iint_D\left(\frac{\partial(-x)}{\partial x} - \frac{\partial(y)}{\partial y}\right)dA = \iint_D (-1-1)\,dA = -2\pi$.
+\end{enumerate}
+
+\end{document}
