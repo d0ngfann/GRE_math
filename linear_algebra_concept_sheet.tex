@@ -1,0 +1,278 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, enumitem, booktabs, array}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\pagestyle{empty}
+
+\newcommand{\sect}[1]{\medskip\noindent\textbf{\large #1}\medskip\hrule\smallskip}
+\newcommand{\subsect}[1]{\smallskip\noindent\textbf{#1}\par}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\diag}{diag}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries GRE Math Subject Test}\\[2pt]
+{\Large Linear Algebra Concept Sheet}
+\end{center}
+
+\vspace{-4pt}
+
+%======================================================================
+\sect{1. Vector Spaces}
+%======================================================================
+
+\subsect{Axioms}
+A \textbf{vector space} $V$ over a field $F$ is an abelian group $(V,+)$ with scalar multiplication $F\times V\to V$ satisfying: associativity, distributivity (both kinds), and $1\cdot v=v$.
+
+\subsect{Key Examples}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\mathbb{R}^n$, $\mathbb{C}^n$ over their respective fields.
+\item $M_{m\times n}(F)$: $m\times n$ matrices over $F$.
+\item $F[x]$: polynomials over $F$ (infinite-dimensional).
+\item $P_n(F)$: polynomials of degree $\le n$ ($\dim = n+1$).
+\item $\{0\}$: the zero vector space ($\dim=0$).
+\end{itemize}
+
+\subsect{Subspaces}
+$W\subseteq V$ is a subspace if:
+\begin{itemize}[nosep,leftmargin=*]
+\item $0\in W$, and
+\item $W$ is closed under addition and scalar multiplication.
+\end{itemize}
+Intersection of subspaces is a subspace. Union generally is NOT.
+
+\subsect{Span, Independence, Basis, Dimension}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\Span(S)=$ all linear combinations of vectors in $S$.
+\item $\{v_1,\ldots,v_k\}$ is \textbf{linearly independent} if $c_1v_1+\cdots+c_kv_k=0 \Rightarrow$ all $c_i=0$.
+\item \textbf{Basis:} linearly independent spanning set.
+\item $\dim V=$ number of vectors in any basis.
+\item In $\mathbb{R}^n$: $\dim=n$.\ In $M_{m\times n}$: $\dim=mn$.\ In $P_n$: $\dim=n+1$.
+\end{itemize}
+
+\subsect{Dimension Formula}
+$\dim(W_1+W_2)=\dim W_1+\dim W_2-\dim(W_1\cap W_2).$
+
+%======================================================================
+\sect{2. Linear Transformations}
+%======================================================================
+
+\subsect{Definition}
+$T\colon V\to W$ is linear if $T(\alpha u+\beta v)=\alpha T(u)+\beta T(v)$.
+
+\subsect{Kernel and Image}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\ker T=\{v\in V:T(v)=0\}$ (subspace of $V$).
+\item $\im T=\{T(v):v\in V\}$ (subspace of $W$).
+\item $T$ injective $\iff$ $\ker T=\{0\}$.
+\item $T$ surjective $\iff$ $\im T=W$.
+\end{itemize}
+
+\subsect{Rank--Nullity Theorem}
+For $T\colon V\to W$ with $\dim V<\infty$:
+\[
+\dim V = \rank(T)+\nullity(T) = \dim(\im T)+\dim(\ker T).
+\]
+
+\subsect{Isomorphism}
+$T$ is an isomorphism $\iff$ $T$ is bijective and linear.\\
+$V\cong W$ as vector spaces $\iff$ $\dim V=\dim W$ (finite-dimensional case).
+
+%======================================================================
+\sect{3. Matrices \& Row Reduction}
+%======================================================================
+
+\subsect{Matrix of a Linear Map}
+$T\colon V\to W$ with ordered bases $B_V$, $B_W$: the matrix $[T]_{B_V}^{B_W}$ has columns = coordinates of $T(v_j)$ in basis $B_W$.
+
+\subsect{Row Echelon Form (REF)}
+Apply elementary row operations to get REF/RREF.
+\begin{itemize}[nosep,leftmargin=*]
+\item $\rank(A)=$ number of pivots = number of nonzero rows in REF.
+\item $\nullity(A)=n-\rank(A)$ (for $A$ with $n$ columns).
+\item $Ax=b$ consistent $\iff$ $\rank(A)=\rank([A\mid b])$.
+\item $Ax=0$ has nontrivial solutions $\iff$ $\rank(A)<n$.
+\end{itemize}
+
+\subsect{Invertibility (Equivalent Conditions)}
+For $n\times n$ matrix $A$, the following are equivalent:
+\begin{itemize}[nosep,leftmargin=*]
+\item $A$ is invertible.
+\item $\det A\neq 0$.
+\item $\rank(A)=n$.
+\item $\ker A=\{0\}$ (columns are linearly independent).
+\item $Ax=b$ has a unique solution for every $b$.
+\item $0$ is NOT an eigenvalue of $A$.
+\item RREF of $A$ is $I_n$.
+\end{itemize}
+
+\subsect{Matrix Algebra}
+\begin{itemize}[nosep,leftmargin=*]
+\item $(AB)^T=B^TA^T$, \quad $(AB)^{-1}=B^{-1}A^{-1}$.
+\item $\rank(AB)\le\min(\rank A,\rank B)$.
+\item $\rank(A^T A)=\rank(A)$.
+\end{itemize}
+
+%======================================================================
+\sect{4. Determinants}
+%======================================================================
+
+\subsect{Properties}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\det(AB)=\det A\cdot\det B$.
+\item $\det(A^T)=\det A$.
+\item $\det(A^{-1})=1/\det A$.
+\item $\det(cA)=c^n\det A$ for $n\times n$ matrix $A$.
+\item Swapping two rows: $\det\to-\det$.
+\item Row of zeros $\Rightarrow$ $\det=0$.
+\item Two identical rows $\Rightarrow$ $\det=0$.
+\item Adding a multiple of one row to another: $\det$ unchanged.
+\end{itemize}
+
+\subsect{Computation}
+\begin{itemize}[nosep,leftmargin=*]
+\item $2\times 2$: $\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc$.
+\item $3\times 3$: cofactor expansion or Sarrus' rule.
+\item Triangular/diagonal: $\det=$ product of diagonal entries.
+\item Block triangular: $\det\begin{pmatrix}A&*\\0&D\end{pmatrix}=\det A\cdot\det D$.
+\end{itemize}
+
+\subsect{Geometric Meaning}
+$|\det A|=$ volume scaling factor of the linear map.
+
+%======================================================================
+\sect{5. Eigenvalues \& Eigenvectors}
+%======================================================================
+
+\subsect{Definitions}
+$Av=\lambda v$ ($v\neq 0$): $\lambda$ is an \textbf{eigenvalue}, $v$ is an \textbf{eigenvector}.\\
+\textbf{Eigenspace:} $E_\lambda=\ker(A-\lambda I)$.
+
+\subsect{Characteristic Polynomial}
+$p(\lambda)=\det(A-\lambda I)$. Eigenvalues = roots of $p(\lambda)=0$.
+\begin{itemize}[nosep,leftmargin=*]
+\item Degree $n$ polynomial $\Rightarrow$ at most $n$ distinct eigenvalues.
+\item $\tr(A)=\sum\lambda_i$ (sum of eigenvalues, with multiplicity).
+\item $\det(A)=\prod\lambda_i$ (product of eigenvalues, with multiplicity).
+\end{itemize}
+
+\subsect{Algebraic vs.\ Geometric Multiplicity}
+\begin{itemize}[nosep,leftmargin=*]
+\item Algebraic mult.\ of $\lambda=$ multiplicity as root of $p(\lambda)$.
+\item Geometric mult.\ of $\lambda=\dim E_\lambda=\nullity(A-\lambda I)$.
+\item Always: $1\le\text{geo}\le\text{alg}$.
+\end{itemize}
+
+\subsect{Key Facts}
+\begin{itemize}[nosep,leftmargin=*]
+\item Eigenvectors for distinct eigenvalues are linearly independent.
+\item Similar matrices ($B=P^{-1}AP$) have the same eigenvalues, trace, determinant, and characteristic polynomial.
+\item If $\lambda$ is an eigenvalue of $A$: eigenvalue of $A^k$ is $\lambda^k$; of $A^{-1}$ is $1/\lambda$; of $A+cI$ is $\lambda+c$.
+\end{itemize}
+
+%======================================================================
+\sect{6. Diagonalization}
+%======================================================================
+
+\subsect{When Is $A$ Diagonalizable?}
+$A$ is diagonalizable $\iff$ $\exists$ basis of eigenvectors $\iff$ geo mult $=$ alg mult for every eigenvalue.
+\begin{itemize}[nosep,leftmargin=*]
+\item $n$ distinct eigenvalues $\Rightarrow$ diagonalizable (sufficient, not necessary).
+\item $A=PDP^{-1}$ where $D=\diag(\lambda_1,\ldots,\lambda_n)$, columns of $P$ are eigenvectors.
+\item Real symmetric matrices are always diagonalizable (and orthogonally diagonalizable).
+\end{itemize}
+
+\subsect{Cayley--Hamilton Theorem}
+Every matrix satisfies its own characteristic polynomial: $p(A)=0$.\\
+\textit{Example:} If $p(\lambda)=\lambda^2-5\lambda+6$, then $A^2-5A+6I=0$.
+
+%======================================================================
+\sect{7. Inner Product Spaces}
+%======================================================================
+
+\subsect{Inner Product on $\mathbb{R}^n$}
+$\langle u,v\rangle = u\cdot v = u^Tv = \sum u_iv_i$.\\
+$\|v\|=\sqrt{\langle v,v\rangle}$.
+
+\subsect{Orthogonality}
+\begin{itemize}[nosep,leftmargin=*]
+\item $u\perp v \iff \langle u,v\rangle=0$.
+\item Orthogonal set of nonzero vectors is linearly independent.
+\item \textbf{Gram--Schmidt:} produces orthogonal (or orthonormal) basis from any basis.
+\item Orthogonal complement: $W^\perp=\{v:\langle v,w\rangle=0\;\forall w\in W\}$.
+\item $\dim W+\dim W^\perp=\dim V$.
+\item $V=W\oplus W^\perp$.
+\end{itemize}
+
+\subsect{Orthogonal \& Symmetric Matrices}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{Orthogonal:} $Q^TQ=I$ $\iff$ columns form an orthonormal basis.\\
+  $\det Q=\pm 1$, preserves lengths and angles.
+\item \textbf{Symmetric:} $A^T=A$.\\
+  All eigenvalues are real.\\
+  Eigenvectors for distinct eigenvalues are orthogonal.\\
+  $A=QDQ^T$ (spectral theorem) with $Q$ orthogonal.
+\end{itemize}
+
+\subsect{Positive Definite Matrices}
+Symmetric $A$ is positive definite if $x^TAx>0$ for all $x\neq 0$.\\
+Equivalent: all eigenvalues $>0$; all leading principal minors $>0$.
+
+%======================================================================
+\sect{8. Special Matrices \& Decompositions}
+%======================================================================
+
+\subsect{Special Types}
+\begin{itemize}[nosep,leftmargin=*]
+\item \textbf{Nilpotent:} $A^k=0$ for some $k$. All eigenvalues are 0.\ $\det A=0$, $\tr A=0$.
+\item \textbf{Idempotent:} $A^2=A$. Eigenvalues $\in\{0,1\}$.\ $\rank(A)=\tr(A)$.
+\item \textbf{Projection:} idempotent. Orthogonal projection if also symmetric.
+\item \textbf{Skew-symmetric:} $A^T=-A$. Diagonal entries are 0. Eigenvalues are purely imaginary (or 0). $\det A\ge 0$ if $n$ is even.
+\end{itemize}
+
+\subsect{Jordan Normal Form (Summary)}
+Every matrix over $\mathbb{C}$ is similar to a Jordan matrix: block diagonal with Jordan blocks $J_k(\lambda)=\lambda I_k + N_k$ (upper shift). Number of Jordan blocks for $\lambda=$ geometric multiplicity.
+
+%======================================================================
+\sect{9. Quick Formulas \& Tricks}
+%======================================================================
+
+\subsect{Trace \& Determinant}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\tr(A+B)=\tr A+\tr B$, \quad $\tr(cA)=c\cdot\tr A$.
+\item $\tr(AB)=\tr(BA)$ (even if $AB\neq BA$).
+\item $\tr(A)=\sum\lambda_i$, \quad $\det(A)=\prod\lambda_i$.
+\end{itemize}
+
+\subsect{$2\times 2$ Eigenvalue Shortcut}
+For $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$:
+\[
+\lambda = \frac{\tr A\pm\sqrt{(\tr A)^2-4\det A}}{2}.
+\]
+
+\subsect{Rank Inequalities}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\rank(A+B)\le\rank A+\rank B$.
+\item $\rank(AB)\ge\rank A+\rank B-n$ (Sylvester).
+\item $\rank(A)=\rank(A^T)=\rank(A^TA)$.
+\end{itemize}
+
+\subsect{Change of Basis}
+If $P$ is the change-of-basis matrix from $B'$ to $B$, then:
+$[T]_{B'}=P^{-1}[T]_B\,P$.
+
+\bigskip
+\hrule
+\smallskip
+\begin{center}
+\textit{Key chain:}\; $\det A\neq 0$ $\iff$ invertible $\iff$ $\rank=n$ $\iff$ $\ker=\{0\}$ $\iff$ all eigenvalues $\neq 0$.
+\end{center}
+
+\end{document}
